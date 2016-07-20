@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Hello World</title>
+</head>
+<body>
+<h2>Test Harness</h2>
+<br/>
+<p th:text="${myTestValue}" />
+<br/>
+<form action="#" th:method="POST">
+<textarea name="newText" id="newText" rows="4" cols="50" th:text="${myTestValue}" />
+<input type="submit" text="submit"/>
+</form>
+</body>
+</html>
