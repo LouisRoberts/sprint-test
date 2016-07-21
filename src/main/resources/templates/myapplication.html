@@ -6,10 +6,12 @@
 <body>
 <h2>Test Harness - Version 3</h2>
 <br/>
-<p th:text="${myTestValue}" />
+<p th:text="${username}" /> 
+<p th:text="${enteredText}" />
 <br/>
 <form action="#" th:method="POST">
-<textarea name="newText" id="newText" rows="4" cols="50" th:text="${myTestValue}" />
+User:<input name="username" id="username" th:value="${username}"/><br/>
+Text:<textarea name="newText" id="newText" rows="4" cols="50" th:text="${enteredText}" />
 <input type="submit" text="submit"/>
 </form>
 </body>

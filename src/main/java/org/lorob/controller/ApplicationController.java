@@ -12,16 +12,21 @@ public class ApplicationController {
 	
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView initialisation() {
-		String testValue="Please Submit Text";
+		String defaultValue="Please Submit Text";
+		String defaultUser="Your Name";
 		ModelAndView result = new ModelAndView("myapplication");
-        result.getModel().put("myTestValue", testValue);
+        result.getModel().put("enteredText", defaultValue);
+        result.getModel().put("username", defaultUser);
         return result;
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-    public ModelAndView updateText(@RequestParam(value="newText") String newText) {
+    public ModelAndView updateText(@RequestParam(value="newText") String newText,
+    							   @RequestParam(value="username") String username) {
 		ModelAndView result = new ModelAndView("myapplication");
-        result.getModel().put("myTestValue", newText);
+		System.out.println("usernamr="+username);
+        result.getModel().put("enteredText", newText);
+        result.getModel().put("username", username);
         return result;
 	} 
 }
